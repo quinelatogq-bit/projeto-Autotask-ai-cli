@@ -10,10 +10,15 @@ Sistema de automação de tarefas via terminal com priorização inteligente.
 - Excluir tarefas com confirmação
 - Comando de ajuda
 - Priorização automática por palavras-chave
+-Geração automática de descrição
+-Sugestão automática de categoria 
 
 ## 🧠 Inteligência aplicada
 
 O sistema define a prioridade automaticamente com base no texto da tarefa.
+Além da prioridade, o sistema também gera automaticamente:
+-descrição da tarefa
+-categoria estimada
 
 ### Regras atuais
 - "urgente", "hoje", "agora", "importante", "cliente", "prazo" → alta

@@ -1,12 +1,18 @@
 from storage import carregar, salvar
+from ia import melhorar_tarefa, sugerir_prioridade, gerar_descricao, sugerir_categoria
 
 def criar_tarefa(nome):
     tarefas = carregar()
 
-    prioridade = definir_prioridade(nome)
+    nome_melhorado = melhorar_tarefa(nome)
+    prioridade = sugerir_prioridade(nome_melhorado)
+    descricao = gerar_descricao(nome_melhorado)
+    categoria = sugerir_categoria(nome_melhorado)
 
     nova = {
-        "nome": nome,
+        "nome": nome_melhorado,
+        "descricao": descricao,
+        "categoria": categoria,
         "status": "pendente",
         "prioridade": prioridade
     }
@@ -31,13 +37,15 @@ def listar_tarefas():
     )
 
     print("\n=== LISTA DE TAREFAS ===")
-    print("-" * 40)
+    print("-" * 50)
 
     for indice_real, t in tarefas_ordenadas:
         print(f"[{indice_real}] {t['nome']}")
+        print(f"     Descrição: {t.get('descricao', 'Sem descrição')}")
+        print(f"     Categoria: {t.get('categoria', 'geral')}")
         print(f"     Status: {t['status']}")
         print(f"     Prioridade: {t['prioridade']}")
-        print("-" * 40)
+        print("-" * 50)
 
 def concluir_tarefa(indice):
     tarefas = carregar()
