@@ -11,7 +11,8 @@ Sistema de automação de tarefas via terminal com priorização inteligente.
 - Comando de ajuda
 - Priorização automática por palavras-chave
 -Geração automática de descrição
--Sugestão automática de categoria 
+-Sugestão automática de categori
+-Editar tarefas  
 
 ## 🧠 Inteligência aplicada
 

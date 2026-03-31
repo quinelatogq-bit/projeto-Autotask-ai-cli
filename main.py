@@ -2,7 +2,8 @@ from tarefas import (
     criar_tarefa,
     listar_tarefas,
     concluir_tarefa,
-    excluir_tarefa
+    excluir_tarefa,
+    editar_tarefa
 )
 
 def exibir_comandos():
@@ -12,6 +13,7 @@ def exibir_comandos():
     print("listar")
     print("concluir <indice>")
     print("excluir <indice>")
+    print("editar <indice> <novo nome da tarefa>")
     print("ajuda")
     print("sair")
 
@@ -60,6 +62,17 @@ def interpretar_comando(comando):
                 excluir_tarefa(indice)
             else:
                 print("Exclusão cancelada.")
+        except ValueError:
+            print("O índice deve ser um número.")
+    elif acao == "editar":
+        if len(partes) < 3:
+            print("Use: editar <indice> <novo nome da tarefa>")
+            return True
+
+        try:
+            indice = int(partes[1])
+            novo_nome = " ".join(partes[2:])
+            editar_tarefa(indice, novo_nome)
         except ValueError:
             print("O índice deve ser um número.")
 

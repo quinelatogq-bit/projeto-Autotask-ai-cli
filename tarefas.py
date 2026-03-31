@@ -66,6 +66,24 @@ def excluir_tarefa(indice):
         print(f"Tarefa removida: {removida['nome']}")
     else:
         print("Índice inválido.")
+def editar_tarefa(indice, novo_nome):
+    tarefas = carregar()
+
+    if 0 <= indice < len(tarefas):
+        nome_melhorado = melhorar_tarefa(novo_nome)
+        prioridade = sugerir_prioridade(nome_melhorado)
+        descricao = gerar_descricao(nome_melhorado)
+        categoria = sugerir_categoria(nome_melhorado)
+
+        tarefas[indice]["nome"] = nome_melhorado
+        tarefas[indice]["descricao"] = descricao
+        tarefas[indice]["categoria"] = categoria
+        tarefas[indice]["prioridade"] = prioridade
+
+        salvar(tarefas)
+        print("Tarefa editada com sucesso.")
+    else:
+        print("Índice inválido.")
 
 def definir_prioridade(nome):
     nome = nome.lower()
