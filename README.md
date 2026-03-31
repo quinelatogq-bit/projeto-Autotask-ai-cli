@@ -4,26 +4,27 @@ Sistema de automação de tarefas via terminal com priorização inteligente.
 
 ## 📌 Funcionalidades
 
-- Criar tarefas
-- Listar tarefas
+- Criar tarefas por comando
+- Listar tarefas ordenadas por prioridade
 - Concluir tarefas
-- Excluir tarefas
+- Excluir tarefas com confirmação
+- Comando de ajuda
 - Priorização automática por palavras-chave
 
 ## 🧠 Inteligência aplicada
 
-O sistema identifica prioridade automaticamente com base no texto da tarefa.
+O sistema define a prioridade automaticamente com base no texto da tarefa.
 
-### Regras:
-- "urgente", "hoje", "agora", "importante", "cliente", "prazo" → prioridade alta
-- "estudar", "revisar", "organizar", "treinar" → prioridade média
-- demais casos → prioridade baixa
+### Regras atuais
+- "urgente", "hoje", "agora", "importante", "cliente", "prazo" → alta
+- "estudar", "revisar", "organizar", "treinar" → média
+- demais casos → baixa
 
 ## 💻 Tecnologias usadas
 
 - Python
 - JSON
-- CLI (interface via terminal)
+- CLI (Command Line Interface)
 
 ## ▶️ Como executar
 
